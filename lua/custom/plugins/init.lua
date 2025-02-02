@@ -2,4 +2,24 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+  {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function()
+      local null_ls = require 'null-ls'
+      null_ls.setup {
+        sources = {
+          null_ls.builtins.diagnostics.cspell,
+          null_ls.builtins.code_actions.cspell,
+        },
+      }
+    end,
+  },
+  { 'tpope/vim-fugitive' },
+  {
+    'luukvbaal/nnn.nvim',
+    config = function()
+      require('nnn').setup()
+    end,
+  },
+}
