@@ -15,11 +15,12 @@ return {
       }
     end,
   },
-  { 'tpope/vim-fugitive' },
   {
     'luukvbaal/nnn.nvim',
     config = function()
       require('nnn').setup()
     end,
   },
+  { 'tpope/vim-fugitive' },
+  { 'tpope/vim-abolish' },
 }
