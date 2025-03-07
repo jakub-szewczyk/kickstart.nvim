@@ -24,6 +24,12 @@ return {
   { 'tpope/vim-fugitive' },
   { 'tpope/vim-abolish' },
   {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end,
+  },
+  {
     'MeanderingProgrammer/render-markdown.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim', 'nvim-tree/nvim-web-devicons' },
     ---@module 'render-markdown'

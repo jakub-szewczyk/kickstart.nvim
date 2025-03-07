@@ -653,7 +653,20 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {
+          commands = {
+            OrganizeImports = {
+              function()
+                vim.lsp.buf.execute_command {
+                  command = '_typescript.organizeImports',
+                  arguments = { vim.api.nvim_buf_get_name(0) },
+                  title = '',
+                }
+              end,
+              description = 'Organize Imports',
+            },
+          },
+        },
         --
 
         lua_ls = {
